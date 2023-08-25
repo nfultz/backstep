@@ -1,0 +1,2 @@
+all: cbtest.c callback.c callback.h callbacks.c callbacks.h
+	gcc -o test cbtest.c callback.c callbacks.c `pkg-config --cflags --libs glib-2.0`

@@ -1,0 +1,47 @@
+Backstep 0.1
+
+Backstep is a daemon that draws icons on the desktop for minimized windows.  It
+doesn't depend on the window manager or a desktop-drawing program.  It it meant
+to work with window managers that are EWHM compliant.  However, I only know that
+it works with Metacity and Xfwm4.  And I know that it doesn't work with Fluxbox
+and that it only works partially with kwin.  I haven't yet tested it with other
+window managers.
+
+Drawing icons for minimized windows on the desktop might be considered a step
+backwards by most people (hence the name), but I find it useful to identify
+minimized windows by position rather than name.
+
+_Features_
+
+** Simple to use.  You don't have to configure anything - just run 'backstep'.
+
+** Session management support.  To the extent that it adds itself to the session
+so that it will be started automatically when you log in to your desktop 
+environment.  (The session management code was borrowed and slightly 
+adapted from the Rox Filer source code.)
+
+** Grouping.  Windows can be grouped together (by right clicking on their icons
+and selecting a group) so that when one window from the group is shown or 
+hidden, all windows in the group are shown or hidden, respectively.
+
+** Configurable.  You can make some adjustments to the way the icons look.  This
+is done through a simple configuration dialog launched by right-clicking on an
+icon.
+
+
+_Installing_
+
+Just run the usual 
+    ./configure && make && sudo make install
+configure accepts the usual arguments.  The only file installed is 
+$PREFIX/bin/backstep
+
+_Notes_
+
+The icons drawn are the ones specified by the application.  I've started working
+on the code to use xdamage, xrender, and xcomposite to draw miniture windows 
+that mirror the actual window contents instead.  This doesn't work too well yet,as I don't know what I'm doing.  Specifically, the scaling is off so there's 
+an extra negative strip at the bottom of the icons, and the resizes aren't yet
+handled.  But you can play around with it by adding the following line to the
+file ~/.backstep (or editing it if its already there and turned off):
+icons.xrender=true

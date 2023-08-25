@@ -1,0 +1,14 @@
+backstep 0.3:
+
+This release makes all the icon frames the same size.  This doesn't scale the 
+actual icon pixmaps.  I played around with doing it that way and decided to just
+adjust the surrounding frames.  Some icons, especially those with thin lines, 
+look really bad or even almost disappear when scaled.  So I think just forcing
+the frames to a common size is the best thing to do for now.  But if anyone
+disagrees, please let me know.  In any case, scaling the icons may be an option
+in the future.  
+
+Also, a bug effecting window managers (like Metacity) that show an animation 
+when a window is minimized was fixed.  The _NET_WM_ICON_GEOMETRY was only 
+getting set after the first minimization, so the first time the icon was shown
+the animation would go to the wrong place.  This should work properly now.

@@ -1,0 +1,22 @@
+2005-09-25  Christohper <christopher@salbot.com>
+
+    * Icon frames are now always the same size, regardless of the size of the
+	icon.
+
+2005-09-25  Christohper <christopher@salbot.com>
+
+    * Bug fix - window managers that draw animations when windows are hidden
+	would animate to the wrong place the first time the icon is show, because
+	NET_WM_NET_GEOMETRY was only being updated after the hidden state changed.
+
+2005-09-25  Christohper <christopher@salbot.com>
+
+    * Added 'version' switch to command line options.
+
+2005-09-21  Christohper <christopher@salbot.com>
+
+    * Bug fix - syntax error on some versions of gcc.
+
+2005-09-21  Christohper <christopher@salbot.com>
+
+    * Initial release (0.1).
